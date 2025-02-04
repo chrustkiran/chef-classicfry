@@ -1,0 +1,453 @@
+{
+    "items": [
+      {
+        "itemId": "1f8f7a19-c7a4-4c80-9b5d-6a2a97f153a0",
+        "name": "Spicy Chicken Wings",
+        "category": "BURGER",
+        "portionPrices": [
+          { "portionPriceId": "9bf9f1f1-ff9d-4a4c-9b29-c39dce255dbd", "portionSize": "SMALL", "price": 5.99 },
+          { "portionPriceId": "660fb3e5-5f77-4c10-bbbf-0fa0a21d1be4", "portionSize": "REGULAR", "price": 7.99 },
+          { "portionPriceId": "46e362c9-d875-4efb-8c9a-f5b8a7a589d2", "portionSize": "LARGE", "price": 9.99 }
+        ],
+        "isAvailable": true,
+        "tag": "Spicy",
+        "ingredientsList": [
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Chicken Wing", "calories": 200, "notes": "Fresh, crispy wings." },
+          { "ingredientId": "91f71cf5-19a1-4a8f-97c5-59242a37c6fc", "name": "Hot Sauce", "calories": 50, "notes": "Spicy sauce for flavor." }
+        ],
+        "description": "Crispy chicken wings with spicy sauce.",
+        "image": "https://media.istockphoto.com/id/835903320/photo/baked-chicken-wings-with-sesame-seeds-and-sweet-chili-sauce-on-white-wooden-board.jpg?s=612x612&w=0&k=20&c=SH8ZCkEKuWD_wxulpntIJ0uD4yRnUf9UXovQwSwrmmA="
+      },
+      {
+        "itemId": "5b84e0fd-e99e-47b0-b6db-bc984adae9b2",
+        "name": "Garlic Butter Wings",
+        "category": "DIPS_AND_SIDE",
+        "portionPrices": [
+          { "portionPriceId": "89a647ed-5e0d-41a0-91e6-f501e98f6f69", "portionSize": "SMALL", "price": 6.99 },
+          { "portionPriceId": "c41c0f36-2e88-4e9c-925f-4fd2a8e3b10d", "portionSize": "REGULAR", "price": 8.99 },
+          { "portionPriceId": "bb3a5024-4a5d-4fe5-a7f7-2f1b1fe912a5", "portionSize": "LARGE", "price": 10.99 }
+        ],
+        "isAvailable": true,
+        "tag": "Garlic",
+        "ingredientsList": [
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Chicken Wing", "calories": 200, "notes": "Fresh, crispy wings." },
+          { "ingredientId": "c12f3b3a-5b3f-4fe1-b348-607a1f219fa0", "name": "Garlic Butter", "calories": 100, "notes": "Buttery, garlicky sauce." }
+        ],
+        "description": "Buttery wings with a garlic kick.",
+        "image": "https://media.istockphoto.com/id/835903320/photo/baked-chicken-wings-with-sesame-seeds-and-sweet-chili-sauce-on-white-wooden-board.jpg?s=612x612&w=0&k=20&c=SH8ZCkEKuWD_wxulpntIJ0uD4yRnUf9UXovQwSwrmmA="
+      },
+      {
+        "itemId": "b8d22cd1-1f9f-417e-b60e-ffae3fe1c540",
+        "name": "Boneless Chicken Bites",
+        "category": "DIPS_AND_SIDE",
+        "portionPrices": [
+          { "portionPriceId": "a9ff5b6f-df34-4ac3-bf34-70abfa42c529", "portionSize": "SMALL", "price": 5.49 },
+          { "portionPriceId": "9e60155f-2cb6-4fcf-a029-cb88fc23e2ad", "portionSize": "REGULAR", "price": 7.49 },
+          { "portionPriceId": "6cf42f8c-b2fc-4cd6-8274-4318ff939c9c", "portionSize": "LARGE", "price": 9.49 }
+        ],
+        "isAvailable": true,
+        "tag": "Boneless",
+        "ingredientsList": [
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Boneless Chicken", "calories": 250, "notes": "Crispy and tender boneless chicken." },
+          { "ingredientId": "91f71cf5-19a1-4a8f-97c5-59242a37c6fc", "name": "Hot Sauce", "calories": 50, "notes": "Spicy sauce for flavor." }
+        ],
+        "description": "Boneless chicken with spicy hot sauce.",
+        "image": "https://media.istockphoto.com/id/835903320/photo/baked-chicken-wings-with-sesame-seeds-and-sweet-chili-sauce-on-white-wooden-board.jpg?s=612x612&w=0&k=20&c=SH8ZCkEKuWD_wxulpntIJ0uD4yRnUf9UXovQwSwrmmA="
+      },
+      {
+        "itemId": "b3474fe0-1b37-4fa2-a0ba-7d924a9d6f91",
+        "name": "Lemon Pepper Wings",
+        "category": "PERI_PERI",
+        "portionPrices": [
+          { "portionPriceId": "93b29cde-11e2-4b6d-97e1-d3cf20b2ab6c", "portionSize": "SMALL", "price": 6.99 },
+          { "portionPriceId": "a589710f-13a1-42da-9252-0f915cb616f9", "portionSize": "REGULAR", "price": 8.99 },
+          { "portionPriceId": "f8d37f24-907b-4eb2-b8ab-508f537345e5", "portionSize": "LARGE", "price": 10.99 }
+        ],
+        "isAvailable": true,
+        "tag": "Lemon Pepper",
+        "ingredientsList": [
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Chicken Wing", "calories": 200, "notes": "Fresh, crispy wings." },
+          { "ingredientId": "ab3a9f9c-5b24-4fdb-8f37-0be7414f2c82", "name": "Lemon Pepper", "calories": 20, "notes": "Zesty lemon pepper seasoning." }
+        ],
+        "description": "Crispy wings with zesty lemon pepper.",
+        "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg="
+      },
+      {
+        "itemId": "9b7291b9-91fa-4200-8b5b-6fe8b92eaf74",
+        "name": "BBQ Boneless Bites",
+        "category": "PERI_PERI",
+        "portionPrices": [
+          { "portionPriceId": "35dcb9a7-4ecf-457f-a8cc-635dc465f9a1", "portionSize": "SMALL", "price": 5.99 },
+          { "portionPriceId": "57e77b10-e600-473d-82e2-b14e6b42307b", "portionSize": "REGULAR", "price": 7.99 },
+          { "portionPriceId": "1d24e35b-41fd-49b7-b35b-6b50d8c924b5", "portionSize": "LARGE", "price": 9.99 }
+        ],
+        "isAvailable": true,
+        "tag": "BBQ",
+        "ingredientsList": [
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Boneless Chicken", "calories": 250, "notes": "Tender boneless chicken." },
+          { "ingredientId": "b2e9e2c7-49e6-4ae5-b7ea-63f0f913bdb8", "name": "BBQ Sauce", "calories": 80, "notes": "Smoky barbecue sauce." }
+        ],
+        "description": "BBQ boneless chicken bites.",
+        "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg="
+      },
+      {
+        "itemId": "3cfb60f9-cc5a-4c73-a557-107a40563136",
+        "name": "Mango Habanero Wings",
+        "category": "PERI_PERI",
+        "portionPrices": [
+          { "portionPriceId": "27ebd4b7-e2bb-4879-94c3-081018e3585d", "portionSize": "SMALL", "price": 7.99 },
+          { "portionPriceId": "c5fe1b2f-3a19-47ad-85d6-bfc2767a5f68", "portionSize": "REGULAR", "price": 9.99 },
+          { "portionPriceId": "f6cf88e5-7c62-4692-b004-b3ac8e67b77f", "portionSize": "LARGE", "price": 11.99 }
+        ],
+        "isAvailable": true,
+        "tag": "Spicy",
+        "ingredientsList": [
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Chicken Wing", "calories": 200, "notes": "Fresh, crispy wings." },
+          { "ingredientId": "6c1b9a3c-6a6e-46a6-b2b0-03be28b191b8", "name": "Mango Habanero Sauce", "calories": 70, "notes": "Sweet and spicy sauce." }
+        ],
+        "description": "Crispy wings with a sweet and spicy mango habanero sauce.",
+        "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg="
+      },
+      {
+        "itemId": "6b3a61b5-e948-47ab-a685-d1a8fbc5071f",
+        "name": "Chicken Tenders",
+        "category": "WRAPS",
+        "portionPrices": [
+          { "portionPriceId": "8bf52f1b-3452-49bb-b2e9-bbce87733ed9", "portionSize": "SMALL", "price": 6.99 },
+          { "portionPriceId": "2b50b2fd-d8b2-4db1-bb6e-2f0629ab0285", "portionSize": "REGULAR", "price": 8.49 },
+          { "portionPriceId": "9e35b40f-d760-47a1-b395-8d089575b6b0", "portionSize": "LARGE", "price": 10.49 }
+        ],
+        "isAvailable": true,
+        "tag": "Boneless",
+        "ingredientsList": [
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Boneless Chicken", "calories": 230, "notes": "Tender, breaded chicken tenders." },
+          { "ingredientId": "3d1a4d70-33f1-4cf4-a27c-b19b741f5425", "name": "Breading", "calories": 100, "notes": "Crunchy breaded coating." }
+        ],
+        "description": "Tender, breaded boneless chicken tenders.",
+        "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg="
+      },
+      {
+        "itemId": "e1c0c46b-90b8-4310-b259-e004aff82a94",
+        "name": "Cheese Fries",
+        "category": "WRAPS",
+        "portionPrices": [
+          { "portionPriceId": "fb5399ab-0c7f-4c64-83f7-c97f03c57c5e", "portionSize": "SMALL", "price": 3.49 },
+          { "portionPriceId": "e5d20228-2d47-4f8c-93cf-d7c2f71c01db", "portionSize": "REGULAR", "price": 5.49 }
+        ],
+        "isAvailable": true,
+        "tag": "Side",
+        "ingredientsList": [
+          { "ingredientId": "92677b7f-e540-4630-9441-cb5951f855e1", "name": "Fries", "calories": 150, "notes": "Crispy fries." },
+          { "ingredientId": "4a7f17fd-e3fc-400e-b680-712f90646685", "name": "Cheese", "calories": 100, "notes": "Melted cheese topping." }
+        ],
+        "description": "Crispy fries topped with melted cheese.",
+        "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg="
+      }
+    ],
+    "deals": [
+      {
+        "dealId": "c5aef4b0-8c32-4b9f-b58e-73a8d0957e41",
+        "dealType": "CHICKEN_DEAL",
+        "name": "Crispy Chicken Meal",
+        "dealItems": [
+          {
+            "dealItemId": "9f2b1c3a-ef45-46c3-aef9-1fbc99a6f312",
+            "name": "Crispy Chicken Piece",
+            "description": "Crunchy and juicy fried chicken",
+            "quantity": 2,
+            "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg=",
+            "deal": {
+              "dealId": "c5aef4b0-8c32-4b9f-b58e-73a8d0957e41",
+              "name": "Crispy Chicken Meal"
+            }
+          }
+        ],
+        "description": "A delicious crispy chicken meal with fries.",
+        "isAvailable": true,
+        "tag": "SPECIAL",
+        "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg=",
+        "price": 12.99
+      },
+      {
+        "dealId": "e5b6d882-9a7c-412b-b5c9-4d82e5f8c3d2",
+        "dealType": "CHICKEN_DEAL",
+        "name": "Spicy Chicken Platter",
+        "dealItems": [
+          {
+            "dealItemId": "a8f4e3b1-3d7a-4e5c-85b9-c4d2f8b3d112",
+            "name": "Spicy Chicken Wings",
+            "description": "Hot and spicy chicken wings",
+            "quantity": 4,
+            "image": "https://media.istockphoto.com/id/2163052205/photo/homemade-garlic-parmesan-chicken-wings-in-a-plate.jpg?s=2048x2048&w=is&k=20&c=55KAIM75-y88b-aaw1PyRWNhYsP2_LqMfGX1r8OyYIg=",
+            "deal": {
+              "dealId": "e5b6d882-9a7c-412b-b5c9-4d82e5f8c3d2",
+              "name": "Spicy Chicken Platter"
+            }
+          }
+        ],
+        "description": "A platter of spicy and flavorful chicken wings.",
+        "isAvailable": true,
+        "tag": "HOT",
+        "image": "https://example.com/images/spicy_chicken_deal.jpg",
+        "price": 14.99
+      },
+      {
+        "dealId": "a3b6f852-3d19-4b62-946e-84e32fb7c1c5",
+        "dealType": "BURGER_DEAL",
+        "name": "Cheesy Burger Combo",
+        "dealItems": [
+          {
+            "dealItemId": "5e8b2d4f-927b-4eb2-b34b-2b8f2baf94a5",
+            "name": "Cheese Burger",
+            "description": "Beef burger with melted cheese",
+            "quantity": 1,
+            "image": "https://example.com/images/cheese_burger.jpg",
+            "deal": {
+              "dealId": "a3b6f852-3d19-4b62-946e-84e32fb7c1c5",
+              "name": "Cheesy Burger Combo"
+            }
+          }
+        ],
+        "description": "A juicy burger with a refreshing drink.",
+        "isAvailable": true,
+        "tag": "POPULAR",
+        "image": "https://example.com/images/burger_deal.jpg",
+        "price": 10.49
+      },
+      {
+        "dealId": "b7d6c8f3-2a45-4f62-85b9-3c4d2f8e7b14",
+        "dealType": "BURGER_DEAL",
+        "name": "Double Patty Delight",
+        "dealItems": [
+          {
+            "dealItemId": "c4d8f3e7-2a9b-4c6f-8b5d-2f3b7c45e9a1",
+            "name": "Double Patty Burger",
+            "description": "A double beef patty burger with extra cheese",
+            "quantity": 1,
+            "image": "https://example.com/images/double_patty_burger.jpg",
+            "deal": {
+              "dealId": "b7d6c8f3-2a45-4f62-85b9-3c4d2f8e7b14",
+              "name": "Double Patty Delight"
+            }
+          }
+        ],
+        "description": "A burger with double the meat and double the flavor.",
+        "isAvailable": true,
+        "tag": "NEW",
+        "image": "https://example.com/images/double_burger_deal.jpg",
+        "price": 13.99
+      },
+      {
+        "dealId": "d4f6b8c9-3a7e-4b52-9c5d-8b3e4f2a7b1c",
+        "dealType": "MIXED_DEAL",
+        "name": "Ultimate Feast",
+        "dealItems": [
+          {
+            "dealItemId": "b8c9f3a7-4d5e-9b2c-8f3a7e4f1b5d",
+            "name": "Burger + Chicken + Fries",
+            "description": "A combination of all your favorites in one meal",
+            "quantity": 1,
+            "image": "https://example.com/images/mixed_deal.jpg",
+            "deal": {
+              "dealId": "d4f6b8c9-3a7e-4b52-9c5d-8b3e4f2a7b1c",
+              "name": "Ultimate Feast"
+            }
+          }
+        ],
+        "description": "A feast with a burger, chicken, and fries.",
+        "isAvailable": true,
+        "tag": "FAMILY",
+        "image": "https://example.com/images/ultimate_feast.jpg",
+        "price": 18.99
+      },
+      {
+        "dealId": "e8f3b7c9-2a4d-5b6e-9c5f-3a7e4b2d1c8f",
+        "dealType": "WRAP_DEAL",
+        "name": "Grilled Chicken Wrap",
+        "dealItems": [
+          {
+            "dealItemId": "c9f3a7b8-4d5e-2b6c-9f3a7e4b1d5c",
+            "name": "Grilled Chicken Wrap",
+            "description": "Soft tortilla filled with grilled chicken and veggies",
+            "quantity": 1,
+            "image": "https://example.com/images/chicken_wrap.jpg",
+            "deal": {
+              "dealId": "e8f3b7c9-2a4d-5b6e-9c5f-3a7e4b2d1c8f",
+              "name": "Grilled Chicken Wrap"
+            }
+          }
+        ],
+        "description": "A healthy and delicious grilled chicken wrap.",
+        "isAvailable": true,
+        "tag": "HEALTHY",
+        "image": "https://example.com/images/grilled_wrap.jpg",
+        "price": 9.99
+      }
+    ],
+    "orders": [
+      {
+        "orderId": "7a3b2c1d-4e5f-6789-0a1b-2c3d4e5f6g7h",
+        "userId": "9a8b7c6d-5e4f-3g2h-1i0j-2k3l4m5n6o7p",
+        "createdTime": "2025-02-02T12:30:15.235Z",
+        "updatedTime": "2025-02-02T12:45:10.500Z",
+        "completedTime": null,
+        "orderItems": [
+          {
+            "orderItemId": "0a1b2c3d-4e5f-6789-0123-4g5h6i7j8k9l",
+            "quantity": 3,
+            "portionSize": "LARGE",
+            "customization": [
+              {
+                "customizationId": "123e4567-e89b-12d3-a456-426614174003",
+                "name": "No Onions",
+                "value": "Yes"
+              }
+            ],
+            "item": {
+              "itemId": "a1b2c3d4-e5f6-7890-1234-5g6h7i8j9k0l",
+              "name": "Beef Burger",
+              "description": "Juicy beef burger with special sauce",
+              "image": "https://assets.epicurious.com/photos/5c745a108918ee7ab68daf79/1:1/w_2560%2Cc_limit/Smashburger-recipe-120219.jpg",
+              "price": 12.50
+            },
+            "deal": null
+          },
+          {
+            "orderItemId": "1a2b3c4d-5e6f-7890-1234-5g6h7i8j9k0l",
+            "quantity": 2,
+            "portionSize": "MEDIUM",
+            "customization": [],
+            "item": {
+              "itemId": "b2c3d4e5-f6g7-8901-2345-6h7i8j9k0l1m",
+              "name": "Fries",
+              "description": "Crispy golden fries",
+              "image": "https://littlesunnykitchen.com/wp-content/uploads/2020/09/French-Fry-Seasoning-7.jpg",
+              "price": 4.99
+            },
+            "deal": null
+          }
+        ],
+        "deliveryMethod": "DELIVERY",
+        "orderStatus": "IN_PROGRESS",
+        "payment": {
+          "paymentID": "c3d4e5f6-7890-1234-5678-9g0h1i2j3k4l",
+          "type": "PAYPAL",
+          "status": "COMPLETED",
+          "amount": 34.99,
+          "orderId": "7a3b2c1d-4e5f-6789-0a1b-2c3d4e5f6g7h",
+          "currency": "AUD"
+        },
+        "additionalInstructions": "Ring the doorbell upon arrival.",
+        "rating": 4,
+        "feedback": "Delicious food, but delivery took a while.",
+        "version": 1
+      },
+      {
+        "orderId": "1a2b3c4d-5e6f-7890-1234-5g6h7i8j9k0l",
+        "userId": "3c4d5e6f-7g8h-9012-3456-7i8j9k0l1m2n",
+        "createdTime": "2025-02-02T14:10:05.200Z",
+        "updatedTime": "2025-02-02T14:25:30.600Z",
+        "completedTime": null,
+        "orderItems": [
+          {
+            "orderItemId": "2b3c4d5e-6f7g-8901-2345-6h7i8j9k0l1m",
+            "quantity": 1,
+            "portionSize": "LARGE",
+            "customization": [],
+            "item": null,
+            "deal": {
+              "dealId": "4d5e6f7g-8901-2345-6789-0h1i2j3k4l5m",
+              "name": "Family Meal Combo",
+              "dealPrice": 29.99
+            }
+          }
+        ],
+        "deliveryMethod": "PICKUP",
+        "orderStatus": "READY_FOR_PICKUP",
+        "payment": {
+          "paymentID": "5e6f7g8h-9012-3456-7890-1i2j3k4l5m6n",
+          "type": "CREDIT_CARD",
+          "status": "PAID",
+          "amount": 29.99,
+          "orderId": "1a2b3c4d-5e6f-7890-1234-5g6h7i8j9k0l",
+          "currency": "USD"
+        },
+        "additionalInstructions": "Extra napkins, please.",
+        "rating": 5,
+        "feedback": "Great deal for the family!",
+        "version": 2
+      },
+      {
+        "orderId": "2d3e4f5g-6789-0123-4567-8h9i0j1k2l3m",
+        "userId": "4f5g6h7i-8901-2345-6789-0j1k2l3m4n5o",
+        "createdTime": "2025-02-02T18:20:50.100Z",
+        "updatedTime": "2025-02-02T18:35:40.700Z",
+        "completedTime": null,
+        "orderItems": [
+          {
+            "orderItemId": "5g6h7i8j-9012-3456-7890-1k2l3m4n5o6p",
+            "quantity": 5,
+            "portionSize": "LARGE",
+            "customization": [],
+            "item": null,
+            "deal": {
+              "dealId": "6h7i8j9k-0123-4567-8901-2l3m4n5o6p7q",
+              "name": "Mega Party Pack",
+              "dealPrice": 49.99
+            }
+          }
+        ],
+        "deliveryMethod": "DELIVERY",
+        "orderStatus": "COMPLETED",
+        "payment": {
+          "paymentID": "7i8j9k0l-1234-5678-9012-3m4n5o6p7q8r",
+          "type": "CREDIT_CARD",
+          "status": "SUCCESS",
+          "amount": 49.99,
+          "orderId": "2d3e4f5g-6789-0123-4567-8h9i0j1k2l3m",
+          "currency": "USD"
+        },
+        "additionalInstructions": "Delivered to the back entrance.",
+        "rating": 5,
+        "feedback": "Amazing food and quick delivery!",
+        "version": 4
+      },
+      {
+        "orderId": "2d3e4f5g-6789-0123-4567-8h270j1k2l3m",
+        "userId": "4f5g6h7i-8901-2345-6789-0j1k2l3m4n5o",
+        "createdTime": "2025-02-02T18:20:50.100Z",
+        "updatedTime": "2025-02-02T18:35:40.700Z",
+        "completedTime": null,
+        "orderItems": [
+          {
+            "orderItemId": "5g6h7i8j-9012-3456-7890-1k2l3m4n5o6p",
+            "quantity": 5,
+            "portionSize": "LARGE",
+            "customization": [],
+            "item": null,
+            "deal": {
+              "dealId": "6h7i8j9k-0123-4567-8901-2l3m4n5o6p7q",
+              "dealName": "Mega Party Pack",
+              "dealPrice": 49.99
+            }
+          }
+        ],
+        "deliveryMethod": "DELIVERY",
+        "orderStatus": "PLACED_WITH_PAYMENT",
+        "payment": {
+          "paymentID": "7i8j9k0l-1234-5678-9012-3m4n5o6p7q8r",
+          "type": "CREDIT_CARD",
+          "status": "SUCCESS",
+          "amount": 49.99,
+          "orderId": "2d3e4f5g-6789-0123-4567-8h9i0j1k2l3m",
+          "currency": "USD"
+        },
+        "additionalInstructions": "Delivered to the back entrance.",
+        "rating": 5,
+        "feedback": "Amazing food and quick delivery!",
+        "version": 4
+      }
+      
+    ]
+  }
+  
