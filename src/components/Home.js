@@ -1,7 +1,10 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import Header from "./Header";
 import useOrder from "../hooks/useOrder";
+import SockJsClient from "react-stomp";
+import SockJS from "sockjs-client";
+import { Client } from "@stomp/stompjs";
 
 const Home = () => {
   const { logout } = useContext(AuthContext);
@@ -9,6 +12,8 @@ const Home = () => {
   const { orders, fetchOrders } = useOrder();
   const [activeTab, setActiveTab] = useState("active");
   const [expandedOrder, setExpandedOrder] = useState(null);
+  const [messages, setMessages] = useState([]);
+  const [stompClient, setStompClient] = useState(null);
 
   const toggleOrder = (orderId) => {
     setExpandedOrder(expandedOrder === orderId ? null : orderId);
@@ -23,10 +28,45 @@ const Home = () => {
     fetchOrders();
   }, []);
 
+  const [message, setMessage] = useState("");
+
+  useEffect(() => {
+    const connectWebSocket = () => {
+      const socket = new SockJS("http://localhost:8080/ws");
+      const client = new Client({
+        webSocketFactory: () => socket,
+        reconnectDelay: 5000,
+        onConnect: () => {
+          client.subscribe("/topic/orders", (message) => {
+            try {
+              JSON.parse(message.body);
+            } catch(e) {
+              
+            }
+          });
+        },
+        onDisconnect: () => {
+          console.log("WebSocket Disconnected. Attempting to reconnect...");
+        },
+        onStompError: (frame) => {
+          console.error("STOMP Error:", frame.headers["message"]);
+        },
+      });
+
+      client.activate();
+      setStompClient(client);
+
+      return client;
+    };
+
+    const clientInstance = connectWebSocket();
+
+    return () => clientInstance.deactivate();
+  }, []);
 
   return (
     <div>
-      <Header></Header>
+      <Header> </Header>
       {/* <h2 className="container mt-4 d-flex justify-content-center">Current Orders</h2> */}
       <section className="food-category-section fix section-padding section-bg">
         <div className="container px-3 px-md-5 px-lg-5 px-xl-5">
@@ -62,7 +102,7 @@ const Home = () => {
                   Denied Orders
                 </button>
               </li>
-              
+
               <li className="nav-item">
                 <button
                   className={`nav-link ${
@@ -93,7 +133,7 @@ const Home = () => {
                           {" "}
                           <small>ORDER ID</small>{" "}
                           <h3 className="card-title">
-                            {order.orderId.substring(0, 6)}
+                            {order.orderId.substring(0, 6).toUpperCase()}
                           </h3>
                         </div>
                         <div>
@@ -146,13 +186,19 @@ const Home = () => {
                       }`}
                     >
                       <div className="card-body">
-                        <div className="d-flex justify-content-between mb-3"><h4>Order Items</h4>
-                        <div className="d-flex gap-3">
-                          <button className="btn btn-dark">Approve</button>
-                          <button style={{border: '1px solid black'}} className="btn btn-light">Deny</button>
+                        <div className="d-flex justify-content-between mb-3">
+                          <h4>Order Items</h4>
+                          <div className="d-flex gap-3">
+                            <button className="btn btn-dark">Approve</button>
+                            <button
+                              style={{ border: "1px solid black" }}
+                              className="btn btn-light"
+                            >
+                              Deny
+                            </button>
+                          </div>
                         </div>
-                        </div>
-                        
+
                         <ul className="list-group">
                           {order.orderItems.map((orderItem, index) => {
                             const item = orderItem.item

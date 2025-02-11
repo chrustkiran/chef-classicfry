@@ -7,8 +7,8 @@ const Header = () => {
   return (
     <div className="d-flex  gap-3 px-0 justify-content-center">
       <div style={{borderRadius: '50px', border: '1px solid black'}} className="d-flex gap-3 px-0 shadow=sm">
-        <div className="btn"> <i class="bi bi-house"></i> Home </div>
-        <div className="btn"><i class="bi bi-search"></i> Search</div>
+        <div className="btn"> <i className="bi bi-house"></i> Home </div>
+        <div className="btn"><i className="bi bi-search"></i> Search</div>
         <div style={{borderRadius: '100%',}} onClick={logout} className="btn btn-dark border"> <i className="bi bi-box-arrow-right"></i></div>
       </div>
     </div>
