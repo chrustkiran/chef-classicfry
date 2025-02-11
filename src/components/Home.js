@@ -39,9 +39,30 @@ const Home = () => {
                   }`}
                   onClick={() => handleTabChange("active")}
                 >
-                  Active Orders
+                  New Orders
                 </button>
               </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${
+                    activeTab === "approved" ? "active" : ""
+                  }`}
+                  onClick={() => handleTabChange("approved")}
+                >
+                  Approved Orders
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link ${
+                    activeTab === "Denied" ? "active" : ""
+                  }`}
+                  onClick={() => handleTabChange("Denied")}
+                >
+                  Denied Orders
+                </button>
+              </li>
+              
               <li className="nav-item">
                 <button
                   className={`nav-link ${
@@ -61,11 +82,11 @@ const Home = () => {
 
             {/* Order List */}
             <div className="row row-cols-1 mt-3 g-1 gap-3">
-              {orders[activeTab].length === 0 ? (
+              {!orders[activeTab] || orders[activeTab]?.length === 0 ? (
                 <p className="text-muted text-center">No orders available.</p>
               ) : (
                 orders[activeTab].map((order) => (
-                  <div key={order.id} className="card">
+                  <div key={order.orderId} className="card">
                     <div className="card-body col gap-3">
                       <div className="d-flex column justify-content-between">
                         <div>
@@ -110,9 +131,9 @@ const Home = () => {
 
                       <button
                         className="btn btn-dark btn-sm mt-4 w-100"
-                        onClick={() => toggleOrder(order.id)}
+                        onClick={() => toggleOrder(order.orderId)}
                       >
-                        {expandedOrder === order.id
+                        {expandedOrder === order.orderId
                           ? "Hide Details"
                           : "View Details"}
                       </button>
@@ -121,7 +142,7 @@ const Home = () => {
                     {/* Expandable Order Details */}
                     <div
                       className={`collapse ${
-                        expandedOrder === order.id ? "show" : ""
+                        expandedOrder === order.orderId ? "show" : ""
                       }`}
                     >
                       <div className="card-body">

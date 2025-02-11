@@ -17,7 +17,7 @@ const OrderStatusMapper = (status) => {
   return status;
 };
 
-const base_url = 'http://localhost:5000/';
+const base_url = 'http://localhost:8080/api/v1/';
 const useOrder = () => {
   const [orders, setOrders] = useState({'active': [], 'completed': []});
 
