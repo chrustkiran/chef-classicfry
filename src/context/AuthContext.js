@@ -7,6 +7,7 @@ const AuthContext = createContext(null);
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isChecked, setChecked] = useState(false);
+  const [isNewOrder, setNewOrder] = useState(false);
 
   useEffect(() => {
     const currentUser = userpool.getCurrentUser();
