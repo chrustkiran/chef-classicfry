@@ -15,7 +15,7 @@ const Header = () => {
           <a href="/home">
             <i className="bi bi-house"></i> Home
           </a>
-          <span className="badge bg-danger">4</span>
+          {isNewOrder && <span className="badge bg-danger">new</span>}
         </div>
         <div className="btn">
           <i className="bi bi-search"></i> Search

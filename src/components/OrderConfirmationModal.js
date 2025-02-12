@@ -20,9 +20,9 @@ const OrderConfirmationModal = ({
         boxShadow: "2px 2px 10px rgba(0,0,0,0.2)",
       }}
     >
-      <h3>Confirm {actionType.replaceAll('-', ' ')} Order</h3>
+      <h3>Confirm "{actionType?.replaceAll('-', ' ')}" Order</h3>
       <p>
-        Are you sure you want to {actionType.replaceAll('-', ' ')} order {orderId}?
+        Are you sure you want to {actionType?.replaceAll('-', ' ')} order {orderId}?
       </p>
       <div className="d-flex gap-2">
         <button

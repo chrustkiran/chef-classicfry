@@ -78,6 +78,7 @@ const Home = () => {
 
   useEffect(() => {
     if (Object.keys(orders).length > 0) {
+      setNewOrder(false);
       setOrderFetched(true);
     }
   }, [orders]);
@@ -94,6 +95,7 @@ const Home = () => {
     OrderService.modifyOrder(actionType, selectedOrder)
       .then((res) => {
         if (res.orderId) {
+          setOrderFetched(false);
           fetchOrders();
           if (actionType === "approve") {
             setActiveTab("In_Progress");
@@ -120,6 +122,7 @@ const Home = () => {
             try {
               const order = JSON.parse(message.body);
               console.log(order);
+              setNewOrder(true);
             } catch (error) {
               setTimeout(() => {
                 //if there is an error in parsing json, that means there was an error so will fetch all the orders in 3 secs
@@ -162,8 +165,8 @@ const Home = () => {
             <ul className="nav nav-tabs d-flex  order-tab">
               <li className="nav-item">
                 <button
-                  className={`nav-link ${
-                    activeTab === "Placed" ? "active" : ""
+                  className={`nav-link text-black ${
+                    activeTab === "Placed" ? "active shadow-sm" : ""
                   }`}
                   onClick={() => handleTabChange("Placed")}
                 >
@@ -172,8 +175,8 @@ const Home = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`nav-link ${
-                    activeTab === "In_Progress" ? "active" : ""
+                  className={`nav-link text-black  ${
+                    activeTab === "In_Progress" ? "active shadow-sm" : ""
                   }`}
                   onClick={() => handleTabChange("In_Progress")}
                 >
@@ -183,8 +186,8 @@ const Home = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`nav-link ${
-                    activeTab === "Denied" ? "active" : ""
+                  className={`nav-link text-black  ${
+                    activeTab === "Denied" ? "active shadow-sm" : ""
                   }`}
                   onClick={() => handleTabChange("Denied")}
                 >
@@ -195,8 +198,8 @@ const Home = () => {
 
               <li className="nav-item">
                 <button
-                  className={`nav-link ${
-                    activeTab === "Completed" ? "active" : ""
+                  className={`nav-link text-black ${
+                    activeTab === "Completed" ? "active shadow-sm" : ""
                   }`}
                   onClick={() => handleTabChange("Completed")}
                 >
@@ -210,7 +213,10 @@ const Home = () => {
                 </div>
               </li>
             </ul>
-
+            
+           {isNewOrder && <div className="d-flex justify-content-center text-secondary">
+            ------------------------------- <a href="/home">Click here to Refresh</a> -------------------------------
+            </div>}
             {/* Order List */}
             {!orderFetched ? (
               <div className="d-flex justify-content-center align-items-center">
