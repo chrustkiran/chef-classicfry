@@ -18,8 +18,10 @@ const Header = () => {
           {isNewOrder && <span className="badge bg-danger">new</span>}
         </div>
         <div className="btn">
-          <i className="bi bi-search"></i> Search
+        <a href="/orders">
+          <i className="bi bi-search"></i> Search </a>
         </div>
+       
         <div
           style={{ borderRadius: "100%" }}
           onClick={logout}

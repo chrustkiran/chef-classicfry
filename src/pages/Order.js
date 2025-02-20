@@ -1,28 +1,50 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Order from "../components/Order";
 import useOrder from "../hooks/useOrder";
-import { useLocation } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Header from "../components/Header";
 
 const OrderPage = () => {
-  const { order, fetchOrder } = useOrder();
+  const { order, fetchOrder, loading } = useOrder();
 
-  const useQuery = () => {
-    return new URLSearchParams(useLocation().search);
-  };
-  const query = useQuery();
-  const orderId = query.get("orderId");
-  useEffect(() => {
-    fetchOrder(orderId);
-  }, []);
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
     <div>
-      {!order && (
-        <div class="spinner-border text-dark" role="status">
-          <span class="visually-hidden">Loading...</span>
+      <Header> </Header>
+
+      <div className="container mt-5">
+        <h2>Search Order</h2>
+        <div className="input-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter order ID"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button
+            className="btn btn-dark"
+            onClick={() => fetchOrder(searchTerm)}
+            disabled={loading}
+          >
+            {loading ? (
+              <span className="spinner-border spinner-border-sm"></span>
+            ) : (
+              "Search"
+            )}
+          </button>
         </div>
-      )}
-      {order && <Order order={order}></Order>}
+
+        {loading && (
+          <div className="mt-3 text-center">
+            <div className="spinner-border"></div>
+            <p>Loading order details...</p>
+          </div>
+        )}
+
+        {order && <Order order={order} />}
+      </div>
     </div>
   );
 };

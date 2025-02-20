@@ -19,10 +19,11 @@ const OrderStatusMapper = (status) => {
   return status;
 };
 
-const base_url = "http://localhost:8080/api/v1/";
+const base_url = `${process.env.REACT_APP_API_URL}/api/v1/`;
 const useOrder = () => {
   const [orders, setOrders] = useState({});
   const [order, setOrder] = useState(undefined);
+  const [loading, setLoading] = useState(false);
 
   const fetchOrders = () => {
     axios
@@ -56,17 +57,20 @@ const useOrder = () => {
   };
 
   const fetchOrder = (orderId) => {
+    setLoading(true);
     axios
       .get(base_url + `orders/${orderId}`)
       .then((res) => {
         setOrder(res.data);
+        setLoading(false);
       })
       .catch((err) => {
         setOrder(null);
+        setLoading(false);
       });
   };
 
-  return { orders, fetchOrders, order, fetchOrder };
+  return { orders, fetchOrders, order, fetchOrder, loading };
 };
 
 export default useOrder;

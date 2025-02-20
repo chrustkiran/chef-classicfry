@@ -55,6 +55,9 @@ const Home = () => {
   const [expandedOrder, setExpandedOrder] = useState(null);
   const [err, setError] = useState(null);
   const [orderFetched, setOrderFetched] = useState(false);
+  const [messages, setMessages] = useState([]);
+  
+  let socket;
 
   const showError = (text) => {
     setError(text);
@@ -147,6 +150,32 @@ const Home = () => {
 
     return () => clientInstance.deactivate();
   }, []);
+
+
+  //   useEffect(() => {
+  //     const websocketUrl = process.env.REACT_APP_WS_URL;
+
+  //     socket = new WebSocket(websocketUrl);
+
+  //     socket.onopen = () => {
+  //         console.log("WebSocket connected");
+  //         socket.send(JSON.stringify({ action: "message", data: "Hello from React!" }));
+  //     };
+
+  //     socket.onmessage = (event) => {
+  //         console.log("Message received:", event.data);
+  //         setMessages((prev) => [...prev, event.data]);
+  //     };
+
+  //     socket.onclose = () => {
+  //         console.log("WebSocket disconnected");
+  //     };
+
+  //     return () => {
+  //         socket.close();
+  //     };
+  // }, []);
+
 
   return (
     <div>
