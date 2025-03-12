@@ -27,7 +27,7 @@ const useOrder = () => {
 
   const fetchOrders = () => {
     axios
-      .get(base_url + "orders")
+      .get(base_url + "orders?fromChef=true")
       .then((res) => {
         const orders = res.data.filter(
           (order) => order.orderStatus in OrderStatus

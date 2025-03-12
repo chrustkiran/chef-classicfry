@@ -56,7 +56,7 @@ const Home = () => {
   const [err, setError] = useState(null);
   const [orderFetched, setOrderFetched] = useState(false);
   const [messages, setMessages] = useState([]);
-  
+
   let socket;
 
   const showError = (text) => {
@@ -115,67 +115,30 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const connectWebSocket = () => {
-      const socket = new SockJS("http://localhost:8080/ws");
-      const client = new Client({
-        webSocketFactory: () => socket,
-        reconnectDelay: 5000,
-        onConnect: () => {
-          client.subscribe("/topic/orders", (message) => {
-            try {
-              const order = JSON.parse(message.body);
-              console.log(order);
-              setNewOrder(true);
-            } catch (error) {
-              setTimeout(() => {
-                //if there is an error in parsing json, that means there was an error so will fetch all the orders in 3 secs
-                fetchOrders();
-              }, 2000);
-            }
-          });
-        },
-        onDisconnect: () => {
-          console.log("WebSocket Disconnected. Attempting to reconnect...");
-        },
-        onStompError: (frame) => {
-          console.error("STOMP Error:", frame.headers["message"]);
-        },
-      });
+    const websocketUrl = process.env.REACT_APP_WS_URL;
 
-      client.activate();
-      return client;
+    socket = new WebSocket(websocketUrl);
+
+    socket.onopen = () => {
+      console.log("WebSocket connected");
     };
 
-    const clientInstance = connectWebSocket();
+    socket.onmessage = (event) => {
+      console.log("Message received:", event.data);
+      setMessages((prev) => [...prev, event.data]);
+      if (event.data === "new-order") {
+        setNewOrder(true);
+      }
+    };
 
-    return () => clientInstance.deactivate();
+    socket.onclose = () => {
+      console.log("WebSocket disconnected");
+    };
+
+    return () => {
+      socket.close();
+    };
   }, []);
-
-
-  //   useEffect(() => {
-  //     const websocketUrl = process.env.REACT_APP_WS_URL;
-
-  //     socket = new WebSocket(websocketUrl);
-
-  //     socket.onopen = () => {
-  //         console.log("WebSocket connected");
-  //         socket.send(JSON.stringify({ action: "message", data: "Hello from React!" }));
-  //     };
-
-  //     socket.onmessage = (event) => {
-  //         console.log("Message received:", event.data);
-  //         setMessages((prev) => [...prev, event.data]);
-  //     };
-
-  //     socket.onclose = () => {
-  //         console.log("WebSocket disconnected");
-  //     };
-
-  //     return () => {
-  //         socket.close();
-  //     };
-  // }, []);
-
 
   return (
     <div>
@@ -242,10 +205,14 @@ const Home = () => {
                 </div>
               </li>
             </ul>
-            
-           {isNewOrder && <div className="d-flex justify-content-center text-secondary">
-            ------------------------------- <a href="/home">Click here to Refresh</a> -------------------------------
-            </div>}
+
+            {isNewOrder && (
+              <div className="d-flex justify-content-center text-secondary">
+                -------------------------------{" "}
+                <a href="/home">Click here to Refresh</a>{" "}
+                -------------------------------
+              </div>
+            )}
             {/* Order List */}
             {!orderFetched ? (
               <div className="d-flex justify-content-center align-items-center">
@@ -373,17 +340,70 @@ const Home = () => {
                                   <div>
                                     <div>
                                       {" "}
-                                      <span>
-                                        {orderItem.portionSize !== "REGULAR" &&
-                                          orderItem.portionSize}
-                                      </span>{" "}
-                                      {item.name}
+                                      <strog> {item.name}</strog>
                                     </div>{" "}
+                                    <div className="d-flex flex-row gap-2">
+                                      {orderItem.portionSize !== "REGULAR" && (
+                                        <span>
+                                          <span>Portion: </span>
+                                          <span
+                                            className={`bg-warning badge badge-pill badge-primary text-dark`}
+                                          >
+                                            {orderItem.portionSize.replaceAll(
+                                              "_",
+                                              " "
+                                            )}
+                                          </span>
+                                        </span>
+                                      )}
+
+                                      {orderItem.pizzaCrust && (
+                                        <span>
+                                          <span>Crust: </span>
+                                          <span
+                                            className={`bg-warning badge badge-pill badge-primary text-dark`}
+                                          >
+                                            {orderItem.pizzaCrust.replaceAll(
+                                              "_",
+                                              " "
+                                            )}
+                                          </span>
+                                        </span>
+                                      )}
+                                      {orderItem.toppings?.length > 0 && (
+                                        <span>
+                                          <span>Toppings: </span>
+                                          {orderItem.toppings.map((topping) => (
+                                            <span
+                                              key={topping}
+                                              className={`bg-warning badge badge-pill badge-primary text-dark me-2 mb-2`}
+                                            >
+                                              {topping.replaceAll("_", " ")}
+                                            </span>
+                                          ))}
+                                        </span>
+                                      )}
+                                    </div>
                                   </div>
                                 </li>
                               );
                             })}
                           </ul>
+                        </div>
+                        <div className="card-body">
+                          <h4>Additional Instructions</h4>
+                          <p>{order.additionalInstructions}</p>
+                        </div>
+                        <div className="card-body">
+                          <h4>Delivery Instructions</h4>
+                          <p>{order.deliveryMethod}</p>
+                          {order.deliveryMethod === "DELIVERY" && (
+                            <p>
+                              {" "}
+                              <i className="bi bi-house"></i> &nbsp;
+                              {`${order.deliveryAddress?.streetAddress}, ${order.deliveryAddress?.streetAddress.town}, ${order.deliveryAddress?.streetAddress.postCode}`}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>
