@@ -21,6 +21,26 @@ export const AuthProvider = ({ children }) => {
     setChecked(true)
   }, []);
 
+useEffect(() => {
+  const interval = setInterval(() => {
+    const currentUser = userpool.getCurrentUser();
+    if (currentUser) {
+      currentUser.getSession((err, session) => {
+          if (session && session.isValid()) {
+            currentUser.refreshSession(session.getRefreshToken(), (err, newSession) => {
+              if (err) {
+                console.error("Auto refresh failed", err);
+                return;
+              }
+            });
+          }
+      });
+    }
+  }, 55 * 60 * 1000);
+
+  return () => clearInterval(interval);
+}, []);
+
   const login = (Email, Password) => {
     return new Promise((resolve, reject) => {
       const user = new CognitoUser({
