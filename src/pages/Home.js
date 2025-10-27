@@ -340,8 +340,12 @@ const Home = () => {
                                   <div>
                                     <div>
                                       {" "}
-                                      <strog> {item.name}</strog>
+                                      <strog> {item.name} 
+                                       {orderItem.drinkOption && <> - {orderItem.drinkOption.name}</>}
+                                    </strog>
+                                      
                                     </div>{" "}
+                                    
                                     <div className="d-flex flex-row gap-2">
                                       {orderItem.portionSize !== "REGULAR" && (
                                         <span>

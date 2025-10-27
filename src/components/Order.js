@@ -57,6 +57,7 @@ const Order = ({ order }) => {
                                 "N/A"}
                             </p>
                             <p>Quantity: {orderItem.quantity}</p>
+                            {orderItem.drinkOption && <p>Drink: {orderItem.drinkOption.name}</p>}
                           </div>
                         </div>
                       </div>
