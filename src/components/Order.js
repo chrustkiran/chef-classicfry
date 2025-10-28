@@ -42,7 +42,7 @@ const Order = ({ order }) => {
                       <div className="col-md-4" key={index}>
                         <div className="card mb-3">
                           <img
-                           style={{width: '400px'}}
+                            style={{ width: '400px' }}
                             src={itemOrDeal.image}
                             className="card-img-top"
                             alt={itemOrDeal.name}
@@ -57,7 +57,8 @@ const Order = ({ order }) => {
                                 "N/A"}
                             </p>
                             <p>Quantity: {orderItem.quantity}</p>
-                            {orderItem.drinkOption && <p>Drink: {orderItem.drinkOption.name}</p>}
+                            {orderItem.drinkOptions && orderItem.drinkOptions.length > 0 && <p>Drinks: {orderItem.drinkOptions.map(d => d.name)
+                              .join(", ")}</p>}
                           </div>
                         </div>
                       </div>

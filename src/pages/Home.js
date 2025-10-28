@@ -341,7 +341,7 @@ const Home = () => {
                                     <div>
                                       {" "}
                                       <strog> {item.name} 
-                                       {orderItem.drinkOption && <> - {orderItem.drinkOption.name}</>}
+                                       {orderItem.drinkOptions && orderItem.drinkOptions.length > 0 && <> - {orderItem.drinkOptions.map(d => d.name).join(", ")}</>}
                                     </strog>
                                       
                                     </div>{" "}
