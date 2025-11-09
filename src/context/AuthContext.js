@@ -56,6 +56,7 @@ useEffect(() => {
       user.authenticateUser(authDetails, {
         onSuccess: (result) => {
           console.log("Login successful");
+          console.log(user.getSignInUserSession().getIdToken()?.payload['custom:store']);
           setUser(user);
           resolve(result);
         },

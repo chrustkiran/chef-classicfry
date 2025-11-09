@@ -49,7 +49,7 @@ const ActionButton = ({ handleActionClick, order }) => {
 };
 
 const Home = () => {
-  const { isNewOrder, setNewOrder } = useContext(AuthContext);
+  const { user, isNewOrder, setNewOrder } = useContext(AuthContext);
   const { orders, fetchOrders } = useOrder();
   const [activeTab, setActiveTab] = useState("Placed");
   const [expandedOrder, setExpandedOrder] = useState(null);
@@ -117,7 +117,8 @@ const Home = () => {
   useEffect(() => {
     const websocketUrl = process.env.REACT_APP_WS_URL;
 
-    socket = new WebSocket(websocketUrl);
+    const store = user.getSignInUserSession().getIdToken()?.payload['custom:store']
+    socket = new WebSocket(`${websocketUrl}?store=${store}`);
 
     socket.onopen = () => {
       console.log("WebSocket connected");
