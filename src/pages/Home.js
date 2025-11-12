@@ -34,16 +34,16 @@ const ActionButton = ({ handleActionClick, order }) => {
 
       {(order.orderStatus === "Placed" ||
         order.orderStatus === "In_Progress") && (
-        <button
-          style={{ border: "1px solid black" }}
-          className="btn btn-light"
-          onClick={() => {
-            handleActionClick(order.orderId, "deny");
-          }}
-        >
-          Deny
-        </button>
-      )}
+          <button
+            style={{ border: "1px solid black" }}
+            className="btn btn-light"
+            onClick={() => {
+              handleActionClick(order.orderId, "deny");
+            }}
+          >
+            Deny
+          </button>
+        )}
     </div>
   );
 };
@@ -158,9 +158,8 @@ const Home = () => {
             <ul className="nav nav-tabs d-flex  order-tab">
               <li className="nav-item">
                 <button
-                  className={`nav-link text-black ${
-                    activeTab === "Placed" ? "active shadow-sm" : ""
-                  }`}
+                  className={`nav-link text-black ${activeTab === "Placed" ? "active shadow-sm" : ""
+                    }`}
                   onClick={() => handleTabChange("Placed")}
                 >
                   New Orders ({orders["Placed"] ? orders["Placed"]?.length : 0})
@@ -168,9 +167,8 @@ const Home = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`nav-link text-black  ${
-                    activeTab === "In_Progress" ? "active shadow-sm" : ""
-                  }`}
+                  className={`nav-link text-black  ${activeTab === "In_Progress" ? "active shadow-sm" : ""
+                    }`}
                   onClick={() => handleTabChange("In_Progress")}
                 >
                   Approved Orders (
@@ -179,9 +177,8 @@ const Home = () => {
               </li>
               <li className="nav-item">
                 <button
-                  className={`nav-link text-black  ${
-                    activeTab === "Denied" ? "active shadow-sm" : ""
-                  }`}
+                  className={`nav-link text-black  ${activeTab === "Denied" ? "active shadow-sm" : ""
+                    }`}
                   onClick={() => handleTabChange("Denied")}
                 >
                   Denied Orders (
@@ -191,14 +188,18 @@ const Home = () => {
 
               <li className="nav-item">
                 <button
-                  className={`nav-link text-black ${
-                    activeTab === "Completed" ? "active shadow-sm" : ""
-                  }`}
+                  className={`nav-link text-black ${activeTab === "Completed" ? "active shadow-sm" : ""
+                    }`}
                   onClick={() => handleTabChange("Completed")}
                 >
                   Completed Orders (
                   {orders["Completed"] ? orders["Completed"]?.length : 0})
                 </button>
+              </li>
+              <li className="nav-item m-auto">
+                <div className="nav-link text-black ">
+                  Branch: <strong> {user.getSignInUserSession().getIdToken()?.payload['custom:store']} </strong>
+                </div>
               </li>
               <li>
                 <div onClick={fetchOrders} className="btn mr-0">
@@ -305,9 +306,8 @@ const Home = () => {
 
                       {/* Expandable Order Details */}
                       <div
-                        className={`collapse ${
-                          expandedOrder === order.orderId ? "show" : ""
-                        }`}
+                        className={`collapse ${expandedOrder === order.orderId ? "show" : ""
+                          }`}
                       >
                         <div className="card-body">
                           <div className="d-flex justify-content-between mb-3">
@@ -341,12 +341,12 @@ const Home = () => {
                                   <div>
                                     <div>
                                       {" "}
-                                      <strog> {item.name} 
-                                       {orderItem.drinkOptions && orderItem.drinkOptions.length > 0 && <> - {orderItem.drinkOptions.map(d => d.name).join(", ")}</>}
-                                    </strog>
-                                      
+                                      <strog> {item.name}
+                                        {orderItem.drinkOptions && orderItem.drinkOptions.length > 0 && <> - {orderItem.drinkOptions.map(d => d.name).join(", ")}</>}
+                                      </strog>
+
                                     </div>{" "}
-                                    
+
                                     <div className="d-flex flex-row gap-2">
                                       {orderItem.portionSize !== "REGULAR" && (
                                         <span>
