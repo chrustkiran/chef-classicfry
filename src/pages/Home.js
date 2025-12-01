@@ -57,6 +57,7 @@ const Home = () => {
   const [orderFetched, setOrderFetched] = useState(false);
   const [messages, setMessages] = useState([]);
 
+  const store = user.getSignInUserSession().getIdToken()?.payload['custom:store']
   let socket;
 
   const showError = (text) => {
@@ -76,8 +77,8 @@ const Home = () => {
   };
 
   useEffect(() => {
-    fetchOrders();
-  }, []);
+    fetchOrders(store);
+  }, [user]);
 
   useEffect(() => {
     if (Object.keys(orders).length > 0) {
@@ -99,7 +100,7 @@ const Home = () => {
       .then((res) => {
         if (res.orderId) {
           setOrderFetched(false);
-          fetchOrders();
+          fetchOrders(store);
           if (actionType === "approve") {
             setActiveTab("In_Progress");
           }
@@ -117,7 +118,6 @@ const Home = () => {
   useEffect(() => {
     const websocketUrl = process.env.REACT_APP_WS_URL;
 
-    const store = user.getSignInUserSession().getIdToken()?.payload['custom:store']
     socket = new WebSocket(`${websocketUrl}?store=${store}`);
 
     socket.onopen = () => {
@@ -139,7 +139,7 @@ const Home = () => {
     return () => {
       socket.close();
     };
-  }, []);
+  }, [user]);
 
   return (
     <div>
@@ -337,13 +337,20 @@ const Home = () => {
                                     width="50"
                                     height="50"
                                   />
-                                  <div> {orderItem.quantity}</div>
+                                  <div> <span style={{
+                                    border: "1px solid black",
+                                    backgroundColor: "black",
+                                    color: "white",
+                                  }} class="badge badge-dark"> {orderItem.quantity}</span></div>
                                   <div>
                                     <div>
                                       {" "}
-                                      <strog> {item.name}
-                                        {orderItem.drinkOptions && orderItem.drinkOptions.length > 0 && <> - {orderItem.drinkOptions.map(d => d.name).join(", ")}</>}
-                                      </strog>
+                                      <div> <strong>{item.name}</strong>
+
+                                        {orderItem.drinkOptions && orderItem.drinkOptions.length > 0 && <><br></br> Drinks - {orderItem.drinkOptions.map(d => d.name).join(", ")}</>}
+
+                                        {orderItem.chipsOptions && orderItem.chipsOptions.length > 0 && <><br></br>Chips - {orderItem.chipsOptions.map(d => d.name).join(", ")}</>}
+                                      </div>
 
                                     </div>{" "}
 

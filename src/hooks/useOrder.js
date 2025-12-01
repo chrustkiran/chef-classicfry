@@ -25,9 +25,9 @@ const useOrder = () => {
   const [order, setOrder] = useState(undefined);
   const [loading, setLoading] = useState(false);
 
-  const fetchOrders = () => {
+  const fetchOrders = (branch) => {
     axios
-      .get(base_url + "orders?fromChef=true")
+      .get(base_url + `orders?fromChef=true&branch=${branch}`)
       .then((res) => {
         const orders = res.data.filter(
           (order) => order.orderStatus in OrderStatus

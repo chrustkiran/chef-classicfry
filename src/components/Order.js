@@ -59,6 +59,8 @@ const Order = ({ order }) => {
                             <p>Quantity: {orderItem.quantity}</p>
                             {orderItem.drinkOptions && orderItem.drinkOptions.length > 0 && <p>Drinks: {orderItem.drinkOptions.map(d => d.name)
                               .join(", ")}</p>}
+                            {orderItem.chipsOptions && orderItem.chipsOptions.length > 0 && <p>Chips: {orderItem.chipsOptions.map(d => d.name)
+                              .join(", ")}</p>}
                           </div>
                         </div>
                       </div>
