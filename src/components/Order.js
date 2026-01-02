@@ -61,6 +61,8 @@ const Order = ({ order }) => {
                               .join(", ")}</p>}
                             {orderItem.chipsOptions && orderItem.chipsOptions.length > 0 && <p>Chips: {orderItem.chipsOptions.map(d => d.name)
                               .join(", ")}</p>}
+                            {orderItem.dealExtrasViews && orderItem.dealExtrasViews.length > 0 && <p>Extras: {orderItem.dealExtrasViews.map(d => `${d.extraItemName} x ${d.quantity}`)
+                                .join(", ")}</p>}
                           </div>
                         </div>
                       </div>
