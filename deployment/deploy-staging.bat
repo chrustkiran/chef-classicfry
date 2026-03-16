@@ -1,0 +1,3 @@
+echo Deploying to S3...
+aws s3 sync build/ s3://www.stg-chef.classicfry.co.uk --delete
+echo Deployment Completed!

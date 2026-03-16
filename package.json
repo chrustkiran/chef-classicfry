@@ -22,6 +22,7 @@
     "start-local": "dotenv -e .env.local -- react-scripts start",
     "start-production": "dotenv -e .env.production -- react-scripts start",
     "build": "dotenv -e .env.production -- react-scripts build",
+    "build-staging": "dotenv -e .env.staging -- react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "aws s3 sync build/ s3://www.chef.classicfry.co.uk  --delete"
