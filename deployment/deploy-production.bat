@@ -1,5 +1,5 @@
 echo Building the application...
-npm run build
+call npm run build
 echo Deploying to S3...
 aws s3 sync build/ s3://www.chef.classicfry.co.uk --delete
 echo Deployment Completed!
