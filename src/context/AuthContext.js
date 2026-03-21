@@ -15,6 +15,7 @@ export const AuthProvider = ({ children }) => {
       currentUser.getSession((err, session) => {
         if (!err && session.isValid()) {
           setUser(currentUser);
+          sessionStorage.setItem("accessToken", currentUser.getSignInUserSession().getAccessToken().getJwtToken());
         }
       });
     }
@@ -31,6 +32,9 @@ useEffect(() => {
               if (err) {
                 console.error("Auto refresh failed", err);
                 return;
+              } else {
+                sessionStorage.setItem("accessToken", newSession.getAccessToken().getJwtToken());
+                console.log("Session auto-refreshed");
               }
             });
           }
@@ -56,8 +60,8 @@ useEffect(() => {
       user.authenticateUser(authDetails, {
         onSuccess: (result) => {
           console.log("Login successful");
-          console.log(user.getSignInUserSession().getIdToken()?.payload['custom:store']);
           setUser(user);
+          sessionStorage.setItem("accessToken", user.getSignInUserSession().getAccessToken().getJwtToken());
           resolve(result);
         },
         onFailure: (err) => {

@@ -24,10 +24,15 @@ const useOrder = () => {
   const [orders, setOrders] = useState({});
   const [order, setOrder] = useState(undefined);
   const [loading, setLoading] = useState(false);
+  const accessToken = sessionStorage.getItem("accessToken");
 
   const fetchOrders = (branch) => {
     axios
-      .get(base_url + `orders?fromChef=true&branch=${branch}`)
+      .get(base_url + `orders?fromChef=true&branch=${branch}`, {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      })
       .then((res) => {
         const orders = res.data.filter(
           (order) => order.orderStatus in OrderStatus
