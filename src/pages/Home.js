@@ -351,7 +351,7 @@ const Home = () => {
 
                                         {orderItem.chipsOptions && orderItem.chipsOptions.length > 0 && <><br></br>Chips - {orderItem.chipsOptions.map(d => d.name).join(", ")}</>}
 
-                                        {orderItem.dealExtrasViews && orderItem.dealExtrasViews.length > 0 && <><br></br>Extras - {orderItem.dealExtrasViews.map(d => `${d.extraItemName} x ${d.quantity}`).join(", ")}</>}
+                                        {orderItem.dealExtrasViews && orderItem.dealExtrasViews.length > 0 && <><br></br>Extras - {orderItem.dealExtrasViews.map(d => `${d.extraItemName} x ${d.extraItemQuantity}`).join(", ")}</>}
                                       </div>
 
                                     </div>{" "}
